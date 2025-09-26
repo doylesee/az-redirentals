@@ -31,21 +31,19 @@ $(document).ready(function(){
 	});
 	
 	// Home page: set min-height for .section elements
-	if ($(window).height() > 690) {
-		var section_min_height = $(window).height();
+	var section_min_height = $(window).height();
 
-		$('.section').each(function() {
-			var section_height_third = $(this).outerHeight() * 2 / 3;
-			var section_effects_height = $(this).find('.effects').outerHeight();
+	$('.section').each(function() {
+		var window_height_half = $(window).height() / 2;
+		var section_effects_height = $(this).find('.effects').outerHeight();
 
-			if (section_height_third > section_effects_height) {
-				$('.section').attr('style','min-height: 0;');
-			}
-			else {
-				$('.section').attr('style','min-height: '+$(window).height()+'px;');
-			}
-		});
-	}
+		if (section_height_third >= section_effects_height) {
+			$('.section').attr('style','min-height: 0;');
+		}
+		else {
+			$('.section').attr('style','min-height: '+$(window).height()+'px;');
+		}
+	});
 	
 	// Home page: add .active class to active section
 	$(window).scroll( function(){
