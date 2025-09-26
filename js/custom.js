@@ -35,10 +35,10 @@ $(document).ready(function(){
 		var section_min_height = $(window).height();
 
 		$('.section').each(function() {
-			var section_height_half = $(this).outerHeight() / 2;
+			var section_height_third = $(this).outerHeight() / 3;
 			var section_effects_height = $(this).find('.effects').outerHeight();
 
-			if (section_height_half > section_effects_height) {
+			if (section_height_third > section_effects_height) {
 				$('.section').attr('style','min-height: 0;');
 			}
 			else {
