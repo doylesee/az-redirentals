@@ -39,7 +39,7 @@ $(document).ready(function(){
 	// Home page: add .active class to active section
 	$(window).scroll( function(){
 		$('.section, .effects-section, .properties__item').each(function(){
-			if ($(window).scrollTop() >= ($(this).position().top)-160){
+			if ($(window).scrollTop() >= ($(this).position().top)-300){
 				//$('.active').removeClass('active');				
 				$(this).addClass('active');
 			}
