@@ -32,9 +32,20 @@ $(document).ready(function(){
 	
 	// Home page: set min-height for .section elements
 	if ($(window).height() > 690) {
-		$('.section').attr('style','min-height: '+$(window).height()+'px;');
+		var section_min_height = $(window).height();
+
+		$('.section').each(function() {
+			var section_height_half = $(this).outerHeight() / 2;
+			var section_effects_height = $(this).find('.effects').outerHeight();
+
+			if (section_height_half > section_effects_height) {
+				$('.section').attr('style','min-height: 0;');
+			}
+			else {
+				$('.section').attr('style','min-height: '+$(window).height()+'px;');
+			}
+		});
 	}
-	//$('.section').height($(window).height());
 	
 	// Home page: add .active class to active section
 	$(window).scroll( function(){
