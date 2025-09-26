@@ -37,7 +37,7 @@ $(document).ready(function(){
 		var window_height_half = $(window).height() / 2;
 		var section_effects_height = $(this).find('.effects').outerHeight();
 
-		if (section_height_third >= section_effects_height) {
+		if (window_height_half >= section_effects_height) {
 			$('.section').attr('style','min-height: 0;');
 		}
 		else {
